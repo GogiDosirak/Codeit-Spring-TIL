@@ -1,0 +1,34 @@
+package com.sprint.mission.springdemo;
+
+import jdk.jfr.Event;
+import org.springframework.context.ApplicationEventPublisher;
+import org.springframework.stereotype.Service;
+
+import java.util.UUID;
+
+@Service
+public class UserServiceImpl implements  UserService{
+
+    private final UserRepository userRepository;
+    private final ApplicationEventPublisher eventPublisher; // User가 생성됐을 때 이벤트를 반환하기 위해 필요
+
+    // 생성자 주입
+    public UserServiceImpl(UserRepository userRepository, ApplicationEventPublisher eventPublisher) {
+        this.userRepository = userRepository;
+        this.eventPublisher = eventPublisher;
+    }
+
+    @Override
+    public UUID registerUser(String userName) {
+        User user = new User(UUID.randomUUID(), userName);
+        userRepository.save(user);
+        UserEvent event = new UserEvent(this, UserEventType.REGISTERED, "User registerd: " + userName);
+        eventPublisher.publishEvent(event);
+        return user.id();
+    }
+
+    @Override
+    public User getUser(UUID userId) {
+        return userRepository.findById(userId);
+    }
+}
