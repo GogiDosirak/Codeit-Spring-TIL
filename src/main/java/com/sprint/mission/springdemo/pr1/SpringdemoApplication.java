@@ -1,7 +1,7 @@
-package com.sprint.mission.springdemo;
+package com.sprint.mission.springdemo.pr1;
 
-import com.sprint.mission.springdemo.component.PrototypeComponent;
-import com.sprint.mission.springdemo.component.SingletonComponent;
+import com.sprint.mission.springdemo.pr1.component.PrototypeComponent;
+import com.sprint.mission.springdemo.pr1.component.SingletonComponent;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;

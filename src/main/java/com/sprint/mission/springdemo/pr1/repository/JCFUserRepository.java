@@ -1,6 +1,6 @@
-package com.sprint.mission.springdemo.repository;
+package com.sprint.mission.springdemo.pr1.repository;
 
-import com.sprint.mission.springdemo.entity.User;
+import com.sprint.mission.springdemo.pr1.entity.User;
 import org.springframework.stereotype.Repository;
 
 import java.util.Map;

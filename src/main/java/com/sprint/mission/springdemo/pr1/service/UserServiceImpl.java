@@ -1,9 +1,9 @@
-package com.sprint.mission.springdemo.service;
+package com.sprint.mission.springdemo.pr1.service;
 
-import com.sprint.mission.springdemo.entity.User;
-import com.sprint.mission.springdemo.event.UserEvent;
-import com.sprint.mission.springdemo.event.UserEventType;
-import com.sprint.mission.springdemo.repository.UserRepository;
+import com.sprint.mission.springdemo.pr1.entity.User;
+import com.sprint.mission.springdemo.pr1.event.UserEvent;
+import com.sprint.mission.springdemo.pr1.event.UserEventType;
+import com.sprint.mission.springdemo.pr1.repository.UserRepository;
 import org.springframework.context.ApplicationEventPublisher;
 import org.springframework.stereotype.Service;
 
@@ -22,8 +22,8 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public UUID registerUser(String userName) {
-        User user = new User(UUID.randomUUID(), userName);
+    public UUID registerUser(String userName, String password) {
+        User user = new User(UUID.randomUUID(), userName, password);
         userRepository.save(user);
         UserEvent event = new UserEvent(this, UserEventType.REGISTERED, "User registerd: " + userName);
         eventPublisher.publishEvent(event);
