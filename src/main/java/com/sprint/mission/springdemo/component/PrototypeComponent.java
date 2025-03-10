@@ -1,4 +1,4 @@
-package com.sprint.mission.springdemo;
+package com.sprint.mission.springdemo.component;
 
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;

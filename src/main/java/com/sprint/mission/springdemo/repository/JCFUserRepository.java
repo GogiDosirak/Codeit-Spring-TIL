@@ -1,5 +1,6 @@
-package com.sprint.mission.springdemo;
+package com.sprint.mission.springdemo.repository;
 
+import com.sprint.mission.springdemo.entity.User;
 import org.springframework.stereotype.Repository;
 
 import java.util.Map;
@@ -7,7 +8,7 @@ import java.util.UUID;
 import java.util.concurrent.ConcurrentHashMap;
 
 @Repository
-public class JCFUserRepository implements UserRepository{
+public class JCFUserRepository implements UserRepository {
 
     private final Map<UUID, User> users = new ConcurrentHashMap<>();
 

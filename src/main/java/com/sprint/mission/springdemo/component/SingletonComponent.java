@@ -1,4 +1,4 @@
-package com.sprint.mission.springdemo;
+package com.sprint.mission.springdemo.component;
 
 import jakarta.annotation.PostConstruct;
 import org.springframework.stereotype.Component;

@@ -1,13 +1,16 @@
-package com.sprint.mission.springdemo;
+package com.sprint.mission.springdemo.service;
 
-import jdk.jfr.Event;
+import com.sprint.mission.springdemo.entity.User;
+import com.sprint.mission.springdemo.event.UserEvent;
+import com.sprint.mission.springdemo.event.UserEventType;
+import com.sprint.mission.springdemo.repository.UserRepository;
 import org.springframework.context.ApplicationEventPublisher;
 import org.springframework.stereotype.Service;
 
 import java.util.UUID;
 
 @Service
-public class UserServiceImpl implements  UserService{
+public class UserServiceImpl implements UserService {
 
     private final UserRepository userRepository;
     private final ApplicationEventPublisher eventPublisher; // User가 생성됐을 때 이벤트를 반환하기 위해 필요

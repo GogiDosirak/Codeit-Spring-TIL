@@ -1,5 +1,7 @@
 package com.sprint.mission.springdemo;
 
+import com.sprint.mission.springdemo.component.PrototypeComponent;
+import com.sprint.mission.springdemo.component.SingletonComponent;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;

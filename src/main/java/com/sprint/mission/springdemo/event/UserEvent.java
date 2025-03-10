@@ -1,4 +1,4 @@
-package com.sprint.mission.springdemo;
+package com.sprint.mission.springdemo.event;
 
 import org.springframework.context.ApplicationEvent;
 
