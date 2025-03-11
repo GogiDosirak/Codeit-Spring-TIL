@@ -1,0 +1,11 @@
+logging:
+  level:
+    root: INFO
+---
+spring:
+  config:
+    activate:
+      on-profile: local
+logging:
+  level:
+    root: INFO

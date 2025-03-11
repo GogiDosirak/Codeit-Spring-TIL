@@ -1,0 +1,11 @@
+spring:
+  application:
+    name: Springdemo
+  config:
+    import:
+      - "classpath:logging-config.yml" #logging 설정 파일
+      - "classpath:port-config.yml" #port 설정 파일
+
+management.endpoints.web.exposure.include: "*"
+
+
