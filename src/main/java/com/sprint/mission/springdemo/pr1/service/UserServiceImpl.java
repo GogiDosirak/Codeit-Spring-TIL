@@ -1,5 +1,6 @@
 package com.sprint.mission.springdemo.pr1.service;
 
+import com.sprint.mission.springdemo.pr1.cache.ServiceCache;
 import com.sprint.mission.springdemo.pr1.entity.User;
 import com.sprint.mission.springdemo.pr1.event.UserEvent;
 import com.sprint.mission.springdemo.pr1.event.UserEventType;
@@ -31,6 +32,7 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
+    @ServiceCache
     public User getUser(UUID userId) {
         return userRepository.findById(userId);
     }

@@ -23,8 +23,6 @@ public class SpringdemoApplication {
         PrototypeComponent prototypeComponent2 = (PrototypeComponent) context.getBean("prototypeComponent");
         System.out.println(prototypeComponent2.getRandomInt()); // 프로토타입이기 때문에, 요청할 때 마다 새로운 객체가 생성됨 -> 값이 달라짐
 
-
-
     }
 
 }
