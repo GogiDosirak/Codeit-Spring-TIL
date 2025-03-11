@@ -4,6 +4,7 @@ import com.sprint.mission.springdemo.pr1.cache.ServiceCache;
 import com.sprint.mission.springdemo.pr1.entity.User;
 import com.sprint.mission.springdemo.pr1.event.UserEvent;
 import com.sprint.mission.springdemo.pr1.event.UserEventType;
+import com.sprint.mission.springdemo.pr1.logging.ServiceLogging;
 import com.sprint.mission.springdemo.pr1.repository.UserRepository;
 import org.springframework.context.ApplicationEventPublisher;
 import org.springframework.stereotype.Service;
@@ -23,6 +24,7 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
+    @ServiceLogging
     public UUID registerUser(String userName, String password) {
         User user = new User(UUID.randomUUID(), userName, password);
         userRepository.save(user);
@@ -33,6 +35,7 @@ public class UserServiceImpl implements UserService {
 
     @Override
     @ServiceCache
+    @ServiceLogging  // 캐싱이 된 상태라면, joinPoint.proceed()가 실행이 안되므로 ServiceLogging도 실행 X
     public User getUser(UUID userId) {
         return userRepository.findById(userId);
     }
